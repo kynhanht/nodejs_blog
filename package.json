@@ -2,9 +2,11 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --inspect index.js",
+    "beautiful": "lint-staged",
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss --output src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,10 +22,19 @@
     "url": "https://github.com/nhandayht/nodejs_blog/issues"
   },
   "homepage": "https://github.com/nhandayht/nodejs_blog#readme",
+  "lint-staged": {
+    "src/**/*.{js,json,scss": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "husky": "^4.3.7",
+    "lint-staged": "^10.5.3",
+    "morgan": "^1.10.0",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1"
   }
 }
