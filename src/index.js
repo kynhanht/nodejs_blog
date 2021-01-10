@@ -18,9 +18,9 @@ app.use(express.json());
 // app.use(morgan('combined'));
 
 //template engine
-app.engine(
-           'hbs',
-            handlebars({
+                app.engine(
+            "hbs",
+                  handlebars({
         extname: '.hbs',
     }),
 );
